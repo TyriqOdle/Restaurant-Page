@@ -14,7 +14,7 @@ export function loadHome(){
     img.src = "./img/homeImg.jpg"
     img.setAttribute("class", "home-img")
 
-    headLine.innerHTML = "<h1>Welcome to Chilo's Kitchen</h1>"
+    headLine.innerHTML = "<h1>Welcome to Chilo's Kitchen 2.0!</h1>"
 
     description.innerHTML = "<p>Nestled in the heart of the city, Saffron & Smoke offers a unique fusion of Caribbean spice and international flair. From sizzling jerk chicken to elegant seafood platters, every dish is crafted with passion and the freshest ingredients.</p>";
 
