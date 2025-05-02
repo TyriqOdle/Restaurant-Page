@@ -1,72 +1,293 @@
-:root{
+/* Modern Dark Theme with Blue Accents */
+:root {
     --primary-color: #1E90FF;
     --secondary-color: #00FFFF;
     --background-color: #121212;
     --secondary-background-color: #1E1E1E;
+    --card-background: #252525;
     --text-color: #E0E0E0;
+    --light-text: #FFFFFF;
+    --muted-text: #A0A0A0;
+    --accent: #3498db;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
 }
 
-body{
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background-color: var(--background-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    padding-bottom: 40px;
 }
 
-nav{
+h1, h2, h3, h4, h5, h6 {
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--secondary-background-color);
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 400px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
 }
 
-nav button{
+nav button {
     background-color: var(--primary-color);
-    width: 100px;
-    padding: 5px;
-    border-radius: 10px;
+    color: var(--light-text);
+    border: none;
+    width: 120px;
+    padding: 0.7rem 1rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
 }
 
-nav button:hover{
+nav button:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 255, 255, 0.2);
 }
 
-#content{
+/* Content Layout */
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    padding: 2rem;
+    gap: 1.5rem;
+    background-color: var(--secondary-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+.container-menu {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--text-color);
+    padding: 2rem;
+    background-color: var(--secondary-background-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Home Page Styles */
+.home-img {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    margin-bottom: 1rem;
+}
+
+.home-img:hover {
+    transform: scale(1.03);
+}
+
+/* Card Styles */
+.card {
+    width: 250px;
+    min-height: 450px;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background-color: var(--card-background);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.container{
-    width: 700px;
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.card h3 {
+    color: var(--light-text);
+    margin: 1rem 0;
+}
+
+.card p {
+    color: var(--muted-text);
+    margin-bottom: 1rem;
+}
+
+.card .price {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.foodimg {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: calc(var(--border-radius) - 4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.foodimg:hover {
+    transform: scale(1.05);
+}
+
+/* Opening Hours Styles */
+.opening-hours {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--text-color);
-    padding: 20px;
-    gap: 1rm;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin: 2rem auto;
 }
 
-.container-menu{
-    width: 900px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    color: var(--text-color);
-    padding: 20px;
-    gap: 1rm;
+.opening-hours h2 {
+    color: var(--light-text);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
-.home-img{
-    border-radius: 100px;
-    width: 200px;
+.opening-hours h2:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
 }
 
-.card{
-    width: 200px;
-    min-height: 400px;
-    flex-shrink: 0;
-    gap: 1rm;
-    padding: 5px;
-    background-color: var(--secondary-background-color);
+.opening-hours ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0;
 }
 
-.foodimg{
-    width: 200px;
+.opening-hours li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.opening-hours li:last-child {
+    border-bottom: none;
+}
+
+/* Button Styles */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 255, 255, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.5rem 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .container-menu {
+        padding: 1rem;
+        justify-content: center;
+    }
+    
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .home-img {
+        width: 250px;
+        height: 250px;
+    }
 }
