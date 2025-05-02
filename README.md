@@ -1,4 +1,4 @@
-# Chilo's Kitchen 🍽️
+# Chilo's Kitchen 2.0
 
 A simple, responsive, single-page restaurant website built using **vanilla JavaScript**, **HTML**, and **CSS**, as part of the [Odin Project](https://www.theodinproject.com/) curriculum.
 
